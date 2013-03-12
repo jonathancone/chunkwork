@@ -3,7 +3,7 @@ chunkwork
 
 Idiomatic Java utilities for breaking tasks into smaller tasks.
 
-One of the principal uses of the ChunkWorkTemplate is to help alleviate issues like SQL in-clause limits.  Take the following example:
+One of the principal uses of the ChunkWorkTemplate is the circumstance where work needs to be broken into discrete pieces, but it does not need to be executed in parallel.  Take the following example:
 
 
     @Override
@@ -21,4 +21,4 @@ One of the principal uses of the ChunkWorkTemplate is to help alleviate issues l
       }.execute();
     }
 
-In this circumstance, database specific IN clause limit exceeded error messages can be avoided because the clause is broken into chunks.  In this case, each chunk is 50 items, so for a list of employee IDs that is 200 items long, the SQL would be executed 4 times, each time using a block of 50 distinct employee IDs.
+In this circumstance, a database specific _IN clause limit exceeded_ error can be avoided because the SQL inputs are chunked into multiple blocks of 50.  Given a list of 130 employee IDs, the SQL statement above would be executed 3 times with distinct blocks of IDs (50 + 50 + 30).

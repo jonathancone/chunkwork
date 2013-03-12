@@ -12,7 +12,6 @@ One of the principal uses of the ChunkWorkTemplate is the circumstance where wor
       new ChunkWorkTemplate<Integer>(50, employeeIds) {
         @Override
         protected void executeOnChunk(List<Integer> chunk) {
-
           Session session = getSession();
           Query query = session.createSQLQuery("delete from Employee where employeeId in (:employeeIds)");
           query.setParameterList("employeeIds", chunk);

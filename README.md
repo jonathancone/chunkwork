@@ -5,12 +5,9 @@ __Simple Java utility for breaking tasks into smaller tasks__
 
 The principal use of the ChunkWorkTemplate is the circumstance where work needs to be broken into discrete pieces, but it does not need to be executed in parallel.  Take the following example:
 
-
-    @Override
     public void delete(final List<Integer> employeeIds) {
 
       new ChunkWorkTemplate<Integer>(50, employeeIds) {
-        @Override
         protected void executeOnChunk(List<Integer> chunk) {
           Session session = getSession();
           Query query = session.createSQLQuery("delete from Employee where employeeId in (:employeeIds)");

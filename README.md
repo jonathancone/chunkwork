@@ -1,7 +1,7 @@
-chunkwork
+Chunkwork
 =========
 
-__Simple Java utility for breaking tasks into smaller tasks.__
+__Simple Java utility for breaking tasks into smaller tasks__
 
 The principal use of the ChunkWorkTemplate is the circumstance where work needs to be broken into discrete pieces, but it does not need to be executed in parallel.  Take the following example:
 

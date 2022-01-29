@@ -4,7 +4,11 @@
 	<groupId>org.chunkwork</groupId>
 	<artifactId>chunkwork</artifactId>
 	<version>1.0</version>
-	<name>chunkwork</name>
+	<properties>
+		<maven.compiler.source>8</maven.compiler.source>
+		<maven.compiler.target>8</maven.compiler.target>
+	</properties>
+    <name>chunkwork</name>
 	<description>Utility for chunking work into a specified number of parts and operating on those parts</description>
 	<dependencies>
 		<dependency>

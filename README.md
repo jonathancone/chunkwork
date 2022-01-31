@@ -7,10 +7,10 @@ Chunker helps you break down a large unit of work into smaller discrete serial u
 
     public void delete(final List<Integer> employeeIds) {
       Chunker.execute(employeeIds, 50, chunk -> {
-          Session session = getSession();
-          Query query = session.createSQLQuery("delete from Employee where employeeId in (:employeeIds)");
-          query.setParameterList("employeeIds", chunk);
-          query.executeUpdate();
+          getSession()
+            .createSQLQuery("delete from Employee where employeeId in (:employeeIds)")
+            .setParameterList("employeeIds", chunk)
+            .executeUpdate();
         });
     }
 

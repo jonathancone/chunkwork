@@ -1,6 +1,5 @@
 package org.chunkwork;
 
-import org.apache.commons.collections.CollectionUtils;
 
 import java.util.ArrayList;
 import java.util.Collection;
@@ -30,7 +29,7 @@ public class Chunker {
             throw new IllegalArgumentException("chunkSize must be greater than zero");
         }
 
-        if (CollectionUtils.isNotEmpty(block)) {
+        if (block != null && !block.isEmpty()) {
             List<T> fixedWorkload = new ArrayList<>(block);
 
             int chunkCount = (int) Math.ceil(fixedWorkload.size()

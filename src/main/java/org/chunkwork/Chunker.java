@@ -1,10 +1,11 @@
 package org.chunkwork;
 
+import org.apache.commons.collections.CollectionUtils;
+
 import java.util.ArrayList;
 import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
-
-import org.apache.commons.collections.CollectionUtils;
 
 /**
  * Take a large List input that you need to operate upon and break it up into smaller
@@ -38,12 +39,9 @@ public class Chunker {
             for (int i = 0; i < chunkCount; i++) {
                 int chunkStart = i * chunkSize;
 
-                chunk.work(fixedWorkload.subList(chunkStart,
-                                Math.min(chunkStart + chunkSize,
-                                        fixedWorkload.size()))
-                        // Make immutable
-                        .stream()
-                        .toList());
+                chunk.work(Collections.unmodifiableList(fixedWorkload.subList(chunkStart,
+                        Math.min(chunkStart + chunkSize,
+                                fixedWorkload.size()))));
 
             }
         }

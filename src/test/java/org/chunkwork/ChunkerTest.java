@@ -1,6 +1,6 @@
 package org.chunkwork;
 
-import static org.junit.Assert.assertEquals;
+import org.junit.Test;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -9,8 +9,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.IntStream;
 
-import org.apache.commons.lang3.ArrayUtils;
-import org.junit.Test;
+import static org.junit.Assert.assertEquals;
 
 /**
  * Unit tests for {@link Chunker}.
@@ -122,7 +121,7 @@ public class ChunkerTest {
         Chunker.execute(IntStream.range(0, 64)
                         .boxed()
                         .map(i -> String.format("%03x", i))
-                        .toList(),
+                        .collect(Collectors.toList()),
                 8,
                 System.out::println);
     }

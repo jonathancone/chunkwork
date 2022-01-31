@@ -29,4 +29,7 @@
         </repository>
     </distributionManagement>
 
+    <scm>
+        <developerConnection>scm:git:ssh://github.com/jonathancone/chunkwork</developerConnection>
+    </scm>
 </project>

@@ -1,6 +1,6 @@
 Chunkwork
 =========
-![Master Branch (Java 8)](https://github.com/jonathancone/chunkwork/actions/workflows/maven.yml/badge.svg)
+![Master Branch (Java 8)](https://github.com/jonathancone/chunkwork/actions/workflows/maven-ci.yml/badge.svg)
 
 __Simple Java utility for breaking tasks into smaller tasks__
 

@@ -20,4 +20,13 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
+
+    <distributionManagement>
+        <repository>
+            <id>github</id>
+            <name>GitHub jonathancone Apache Maven Packages</name>
+            <url>https://maven.pkg.github.com/jonathancone/chunkwork</url>
+        </repository>
+    </distributionManagement>
+
 </project>

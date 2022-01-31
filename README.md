@@ -1,6 +1,7 @@
 Chunkwork
 =========
 ![Master Branch (Java 8)](https://github.com/jonathancone/chunkwork/actions/workflows/maven.yml/badge.svg)
+
 __Simple Java utility for breaking tasks into smaller tasks__
 
 Chunker helps you break down a large unit of work into smaller discrete serial units of work.  Take the following example:
